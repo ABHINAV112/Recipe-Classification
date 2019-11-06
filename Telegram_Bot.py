@@ -1,3 +1,4 @@
+# Cuisine prediction model
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -12,20 +13,12 @@ raw_data_frame.head()
 
 def text_prepare(ingredient):
     import re
-    #Compilation of all the special characters
     REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
-
-    #Replacing the character
     ingredient = re.sub(REPLACE_BY_SPACE_RE,' ',ingredient)
-    
-    #Converting the text to lowercase
     ingredient = ingredient.lower()
-    
     ingredient = ingredient.strip()
     ingredient = ' '.join([word for word in ingredient.split(" ")])
-    
     return ingredient
-    
 
 def loader(ingredient_list):    
     return ' '.join([text_prepare(ingredient) for ingredient in ingredient_list])
@@ -50,7 +43,6 @@ vocabulary_size = len(tokenizer.word_index) + 1
 
 word_index = tokenizer.word_index
 
-
 def word_input_form(word):
     token = tokenizer.texts_to_sequences([word])
     padded = pad_sequences(token,maxlen=40,padding='post',dtype='int32')
@@ -65,7 +57,7 @@ def predict(word):
     return(cuisine_labels[out])
 
 ########################################################
-
+# google cloud vision
 def detect_labels(path):
     import io
     """Detects labels in the file."""
@@ -100,6 +92,7 @@ def detect_labels(path):
 
 
 ########################################################
+# Telegram bot 
 with open('secret_token/bot_token.txt') as t:
     token = t.read().rsplit()[0]
 print(token)
