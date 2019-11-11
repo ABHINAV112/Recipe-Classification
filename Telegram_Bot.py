@@ -121,7 +121,8 @@ def handle_images(update,context):
 
     # downloading the image using wget, assigning the file path to downloaded_file
     downloaded_file = download(file_path,image_path)
-    labs, ingredients = detect_labels("test_images/Creamy-Tomato-and-Spinach-Pasta-skillet-1-500x480.jpg")
+    labs, ingredients = detect_labels(downloaded_file)
+    print('got labels')
     out_ingredients = 'Ingredients:\n'
     for i,val in enumerate(ingredients):
         out_ingredients += str(i+1) +'. '+val+'\n'
