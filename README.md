@@ -16,7 +16,7 @@ pip install python-telegram-bot
 pip install tensorflow
 ```
 
-## Downloading the required data
+## Downloading the required data(to big to be inlcuded in the current project)
 
 1. Download the what's cooking dataset from [kaggle](https://www.kaggle.com/c/whats-cooking)
 2. Download the glove embeddings text file from [kaggle](https://www.kaggle.com/terenceliu4444/glove6b100dtxt#glove.6B.100d.txt).
