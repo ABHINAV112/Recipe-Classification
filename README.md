@@ -18,8 +18,8 @@ pip install tensorflow
 
 ## Downloading the required data
 
-1. Download the what's cooking dataset from kaggle
-2. Download the glove embeddings text file from kaggle]
+1. Download the what's cooking dataset from [kaggle](https://www.kaggle.com/c/whats-cooking)
+2. Download the glove embeddings text file from [kaggle](https://www.kaggle.com/terenceliu4444/glove6b100dtxt#glove.6B.100d.txt).
 3. Make a folder called data, then proceed to move the train.json, the glove file and Food-Nutrition.xlsx into the data folder.
 
 ## Nutrient Vector Model
